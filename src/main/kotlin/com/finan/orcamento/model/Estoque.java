@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.engine.jdbc.mutation.spi.BindingGroup;
+import org.hibernate.mapping.Join;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -34,7 +35,7 @@ public class Estoque implements Serializable {
     @Column(name = "desconto")
     private BigDecimal desconto;
 
-    @Column(name = "observer")
+    @Transient //não entendo como eu deveria inserir esse dado em uma database
     private ArrayList<Observer> observers = new ArrayList<Observer>();
 
     public Estoque(String produto, BigDecimal valor, BigDecimal desconto){
@@ -51,6 +52,11 @@ public class Estoque implements Serializable {
         for(Observer observer : observers){
             observer.update(this);
         }
+    }
+
+    public void setValor(BigDecimal valor){
+        this.valor = valor;
+        notifyObservers();
     }
 
 
