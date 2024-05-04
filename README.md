@@ -1,4 +1,4 @@
-﻿# SpringBootCrudPatterns
+﻿# Design Pattern Observer
 Bando de dados PostGresSQL
-Olhe no Properties.
-A ideia e a integração de um CRUD com uma função sendo refatorada para um design patterns.
+Testes na TesteMain
+Programa de demonstração de um CRUD com um observer
