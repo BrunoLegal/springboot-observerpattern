@@ -27,8 +27,8 @@ public class EstoqueService {
     public Estoque cadastrarEstoque(Estoque estoque){
         return estoqueRepository.save(estoque);
     }
-    public Estoque atualizarEstoque(Estoque estoque){
-        Estoque newEstoque = buscaId(estoque.getId());
+    public Estoque atualizarEstoque(Estoque estoque, Long id){
+        Estoque newEstoque = buscaId(id);
         newEstoque.setProduto(estoque.getProduto());
         newEstoque.setDesconto(estoque.getDesconto());
         newEstoque.setValor(estoque.getValor());
