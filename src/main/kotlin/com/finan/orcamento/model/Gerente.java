@@ -36,7 +36,7 @@ public class Gerente implements Observer, Serializable {
     @Override
     public void update(Estoque estoque){
         BigDecimal valor = estoque.getValor();
-        BigDecimal limite = new BigDecimal(1000);
+        BigDecimal limite = new BigDecimal("1000");
         if (valor.compareTo(limite)>0){
         System.out.println("Gerente "+nome+": Valor do produto "+estoque.getProduto()+" é maior que "+limite);
         }

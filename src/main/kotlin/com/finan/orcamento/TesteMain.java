@@ -28,7 +28,19 @@ public class TesteMain {
         estoqueService.cadastrarEstoque(estoque);
         */
         estoque.attach(gerente);
+
+        System.out.println("---------------------VALOR DE 100-------------------------------");
         estoque.setValor(valor);
+        System.out.println("----------------------------------------------------------------");
+
+
+        Gerente outroGerente = new Gerente("Pedro", "Google");
+        estoque.attach(outroGerente);
+        valor = new BigDecimal(2000);
+
+        System.out.println("---------------------VALOR de 2000------------------------------");
+        estoque.setValor(valor);
+        System.out.println("----------------------------------------------------------------");
 
     }
 }
