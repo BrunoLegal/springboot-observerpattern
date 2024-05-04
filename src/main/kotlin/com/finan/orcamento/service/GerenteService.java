@@ -37,4 +37,7 @@ public class GerenteService {
         newGerente.setEmpresa(gerente.getEmpresa());
         return gerenteRepository.save(newGerente);
     }
+    public void deletarGerente(Long id){
+        gerenteRepository.deleteById(id);
+    }
 }

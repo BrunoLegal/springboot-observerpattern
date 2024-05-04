@@ -19,7 +19,7 @@ public class UsuarioController {
     private UsuarioRepository usuarioRepository;
 
     @GetMapping
-    public ResponseEntity<List<UsuarioModel>>BuscaTodosUsuarios(){
+    public ResponseEntity<List<UsuarioModel>>buscaTodosUsuarios(){
         return ResponseEntity.ok(usuarioService.buscarUsuario());
     }
     @GetMapping(path="/pesquisaid/{id}")

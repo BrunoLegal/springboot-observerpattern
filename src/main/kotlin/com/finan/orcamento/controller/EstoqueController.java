@@ -16,7 +16,7 @@ public class EstoqueController {
     EstoqueService estoqueService;
 
     @GetMapping
-    public ResponseEntity<List<Estoque>> BuscaTodosUsuarios(){
+    public ResponseEntity<List<Estoque>> buscaTodosEstoques(){
         return ResponseEntity.ok(estoqueService.buscarEstoques());
     }
     @GetMapping(path="/pesquisaid/{id}")
@@ -25,16 +25,16 @@ public class EstoqueController {
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<Estoque>cadastraUsuario(@RequestBody Estoque usuarioModel){
-        return ResponseEntity.ok(estoqueService.cadastrarEstoque(usuarioModel));
+    public ResponseEntity<Estoque>cadastraEstoque(@RequestBody Estoque estoque){
+        return ResponseEntity.ok(estoqueService.cadastrarEstoque(estoque));
     }
     @PostMapping(path="/put/{id}")
-    public ResponseEntity<Estoque>atualizaUsuario(@RequestBody Estoque usuarioModel, @PathVariable Long id){
-        Estoque usuarioNewObj=estoqueService.atualizarEstoque(usuarioModel, id);
-        return ResponseEntity.ok().body(usuarioNewObj);
+    public ResponseEntity<Estoque>atualizaEstoque(@RequestBody Estoque estoque, @PathVariable Long id){
+        Estoque estoqueNewObj=estoqueService.atualizarEstoque(estoque, id);
+        return ResponseEntity.ok().body(estoqueNewObj);
     }
     @DeleteMapping(path="/delete/{id}")
-    public void deleteUsuario(@PathVariable Long id){
+    public void deleteEstoque(@PathVariable Long id){
         estoqueService.deletarEstoque(id);
     }
 }
